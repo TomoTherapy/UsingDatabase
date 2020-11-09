@@ -31,18 +31,19 @@
             </TabItem>
             <TabItem Header="SQLite" Margin="0" Width="70">
                 <Grid Background="#FF383838">
-                    <Button x:Name="QueryExecute_btn" Content="Execute" HorizontalAlignment="Left" Margin="437,10,0,0" VerticalAlignment="Top" Width="166" Height="38" Click="QueryExecute_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
-                    <TextBox x:Name="Query_textBox" HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Background="#FF555555" Foreground="White" BorderBrush="#FF555555" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Padding="3" Text="select * from employee" TabIndex="0"/>
+                    <Button x:Name="OpenDatabase_btn" Content="Open DB" HorizontalAlignment="Left" Margin="437,10,0,0" VerticalAlignment="Top" Width="166" Height="39" Click="OpenDatabase_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
+                    <Button x:Name="QueryExecute_btn" Content="Execute" HorizontalAlignment="Left" Margin="437,54,0,0" VerticalAlignment="Top" Width="166" Height="39" Click="QueryExecute_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
+                    <TextBox x:Name="Query_textBox" HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Background="#FF555555" Foreground="White" BorderBrush="#FF555555" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Padding="3" Text="SELECT name FROM sqlite_master WHERE type = 'table';" TabIndex="0"/>
                     <TextBlock x:Name="Status_textBlock" Margin="10,450,10,10" TextWrapping="Wrap" Foreground="White" Background="#FF646464"/>
                     <DataGrid x:Name="SQLite_dataGrid" Height="260" Margin="10,185,10,0" VerticalAlignment="Top" IsReadOnly="True" AutoGenerateColumns="True">
                     </DataGrid>
-                    <Button x:Name="CreateTable_btn" Content="Create Table" HorizontalAlignment="Left" Margin="437,101,0,0" VerticalAlignment="Top" Width="166" Click="CreateTable_btn_Click" Height="34" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
+                    <Button x:Name="CreateTable_btn" Content="Create Table" HorizontalAlignment="Left" Margin="437,98,0,0" VerticalAlignment="Top" Width="166" Click="CreateTable_btn_Click" Height="39" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
                     <TextBox x:Name="Name_textBox" HorizontalAlignment="Left" Height="30" Margin="700,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
                     <TextBox x:Name="Address_textBox" Height="30" Margin="700,45,9,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
                     <TextBox x:Name="Description_textBox" Height="30" Margin="700,80,9,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
                     <TextBox x:Name="Department_textBox" HorizontalAlignment="Left" Height="30" Margin="700,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
                     <TextBox x:Name="Salary_textBox" HorizontalAlignment="Left" Height="30" Margin="700,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <Button x:Name="Insert_btn" Content="Insert" HorizontalAlignment="Left" Height="40" Margin="437,140,0,0" VerticalAlignment="Top" Width="166" Click="Insert_btn_Click" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
+                    <Button x:Name="Insert_btn" Content="Insert" HorizontalAlignment="Left" Height="38" Margin="437,142,0,0" VerticalAlignment="Top" Width="166" Click="Insert_btn_Click" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
                     <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="608,11,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
                     <Label x:Name="label_Copy" Content="Address" HorizontalAlignment="Left" Margin="608,45,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
                     <Label x:Name="label_Copy1" Content="Description" HorizontalAlignment="Left" Margin="608,80,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>

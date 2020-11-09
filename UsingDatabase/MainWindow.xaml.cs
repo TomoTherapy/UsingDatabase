@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
 
 namespace UsingDatabase
 {
@@ -17,14 +19,27 @@ namespace UsingDatabase
             InitializeComponent();
 
             lite = new SQLiteX64();
-            lite.ConnectDB(AppDomain.CurrentDomain.BaseDirectory + @"\test.db");
-
             mysql = new MySQL();
         }
 
         #region SQLite
+        private void OpenDatabase_btn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog() { OverwritePrompt = false, CheckFileExists = false };
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                lite.ConnectDB(dialog.FileName);
+            }
+
+        }
+
         private void QueryExecute_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (!lite.Connection)
+            {
+                MessageBox.Show("DB 연결안됨");
+            }
+
             try
             {
                 SQLiteExecuteQuery(Query_textBox.Text.Trim());
@@ -38,6 +53,11 @@ namespace UsingDatabase
 
         private void SQLiteExecuteQuery(string sql)
         {
+            if (!lite.Connection)
+            {
+                MessageBox.Show("DB 연결안됨");
+            }
+
             if (sql.ToUpper().Contains("SELECT"))
             {
                 lite.ExecuteDataTable(sql);
@@ -52,6 +72,11 @@ namespace UsingDatabase
 
         private void CreateTable_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (!lite.Connection)
+            {
+                MessageBox.Show("DB 연결안됨");
+            }
+
             string sql = "CREATE TABLE EMPLOYEE( " + Environment.NewLine;
             sql += "NUM INTEGER PRIMARY KEY AUTOINCREMENT " + Environment.NewLine;
             sql += ", NAME VARCHAR(100)" + Environment.NewLine;
@@ -73,6 +98,11 @@ namespace UsingDatabase
 
         private void Insert_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (!lite.Connection)
+            {
+                MessageBox.Show("DB 연결안됨");
+            }
+
             string sql = "INSERT INTO EMPLOYEE(NAME, ADDRESS, DESCRIPTION, DEPARTMENT,SALARY) VALUES (" + Environment.NewLine;
             sql += "'" + Name_textBox.Text + "'" + Environment.NewLine;
             sql += ",'" + Address_textBox.Text + "'" + Environment.NewLine;
