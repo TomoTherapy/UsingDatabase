@@ -38,6 +38,7 @@ namespace UsingDatabase
             if (!lite.Connection)
             {
                 MessageBox.Show("DB 연결안됨");
+                return;
             }
 
             try
@@ -56,6 +57,7 @@ namespace UsingDatabase
             if (!lite.Connection)
             {
                 MessageBox.Show("DB 연결안됨");
+                return;
             }
 
             if (sql.ToUpper().Contains("SELECT"))
@@ -75,6 +77,7 @@ namespace UsingDatabase
             if (!lite.Connection)
             {
                 MessageBox.Show("DB 연결안됨");
+                return;
             }
 
             string sql = "CREATE TABLE EMPLOYEE( " + Environment.NewLine;
@@ -101,6 +104,7 @@ namespace UsingDatabase
             if (!lite.Connection)
             {
                 MessageBox.Show("DB 연결안됨");
+                return;
             }
 
             string sql = "INSERT INTO EMPLOYEE(NAME, ADDRESS, DESCRIPTION, DEPARTMENT,SALARY) VALUES (" + Environment.NewLine;
