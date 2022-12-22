@@ -12,8 +12,8 @@
                 <Grid Background="#FF283752">
                     <Grid Margin="10" Background="#FFBCC7D8">
                         <Button x:Name="MySQLCon_btn" Content="MySQL Connection" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="148" Click="MySQLCon_btn_Click" Height="35" Background="#FF496184" Foreground="White" BorderBrush="#FF496184" FontSize="14"/>
-                        <DataGrid x:Name="MySQL_dataGrid" Height="207" Margin="10,228,10,0" VerticalAlignment="Top" Background="White"/>
-                        <TextBlock x:Name="MySQLStatus_textBlock" Margin="10,440,10,10" TextWrapping="Wrap" Background="White" FontFamily="Consolas" Padding="3,3,0,0"/>
+                        <DataGrid x:Name="MySQL_dataGrid" Margin="10,228,10,81" Background="White"/>
+                        <TextBlock x:Name="MySQLStatus_textBlock" Margin="10,0,10,10" TextWrapping="Wrap" Background="White" FontFamily="Consolas" Padding="3,3,0,0" Height="66" VerticalAlignment="Bottom"/>
                         <Button x:Name="MySQLExecute_btn" Content="Execute Query" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="148" Click="MySQLExecute_btn_Click" Height="35" Background="#FF496184" Foreground="White" BorderBrush="#FF496184" FontSize="14"/>
                         <TextBox x:Name="MySQLQuery_textBox" Height="213" Margin="163,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" AcceptsReturn="True" AcceptsTab="True" Padding="3" FontSize="14" FontFamily="Consolas" Foreground="#FF007FBF" HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True"/>
                         <TextBox x:Name="Server_textBox" HorizontalAlignment="Left" Height="20" Margin="70,50,0,0" TextWrapping="Wrap" Text="localhost" VerticalAlignment="Top" Width="88"/>
@@ -31,24 +31,19 @@
             </TabItem>
             <TabItem Header="SQLite" Margin="0" Width="70">
                 <Grid Background="#FF383838">
-                    <Button x:Name="OpenDatabase_btn" Content="Open DB" HorizontalAlignment="Left" Margin="437,10,0,0" VerticalAlignment="Top" Width="166" Height="39" Click="OpenDatabase_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
-                    <Button x:Name="QueryExecute_btn" Content="Execute" HorizontalAlignment="Left" Margin="437,54,0,0" VerticalAlignment="Top" Width="166" Height="39" Click="QueryExecute_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
-                    <TextBox x:Name="Query_textBox" HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Background="#FF555555" Foreground="White" BorderBrush="#FF555555" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Padding="3" Text="SELECT name FROM sqlite_master WHERE type = 'table';" TabIndex="0"/>
-                    <TextBlock x:Name="Status_textBlock" Margin="10,450,10,10" TextWrapping="Wrap" Foreground="White" Background="#FF646464"/>
-                    <DataGrid x:Name="SQLite_dataGrid" Height="260" Margin="10,185,10,0" VerticalAlignment="Top" IsReadOnly="True" AutoGenerateColumns="True">
-                    </DataGrid>
-                    <Button x:Name="CreateTable_btn" Content="Create Table" HorizontalAlignment="Left" Margin="437,98,0,0" VerticalAlignment="Top" Width="166" Click="CreateTable_btn_Click" Height="39" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
-                    <TextBox x:Name="Name_textBox" HorizontalAlignment="Left" Height="30" Margin="700,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <TextBox x:Name="Address_textBox" Height="30" Margin="700,45,9,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <TextBox x:Name="Description_textBox" Height="30" Margin="700,80,9,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <TextBox x:Name="Department_textBox" HorizontalAlignment="Left" Height="30" Margin="700,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <TextBox x:Name="Salary_textBox" HorizontalAlignment="Left" Height="30" Margin="700,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FF5B5B5B" Foreground="White" Padding="5,5,0,0"/>
-                    <Button x:Name="Insert_btn" Content="Insert" HorizontalAlignment="Left" Height="38" Margin="437,142,0,0" VerticalAlignment="Top" Width="166" Click="Insert_btn_Click" Background="#FF6E6E6E" BorderBrush="#FF6E6E6E" Foreground="White" FontSize="20"/>
-                    <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="608,11,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
-                    <Label x:Name="label_Copy" Content="Address" HorizontalAlignment="Left" Margin="608,45,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
-                    <Label x:Name="label_Copy1" Content="Description" HorizontalAlignment="Left" Margin="608,80,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
-                    <Label x:Name="label_Copy2" Content="Department" HorizontalAlignment="Left" Margin="608,115,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
-                    <Label x:Name="label_Copy3" Content="Salary" HorizontalAlignment="Left" Margin="608,150,0,0" VerticalAlignment="Top" Foreground="#FFE2E2E2" FontSize="14"/>
+                    <Button x:Name="OpenDatabase_btn" Content="Open DB" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="130" Height="39" Click="OpenDatabase_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
+                    <Button x:Name="QueryExecute_btn" Content="Execute" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="130" Height="39" Click="QueryExecute_btn_Click" Background="#FF6E6E6E" Foreground="White" FontSize="20" BorderBrush="#FF6E6E6E"/>
+                    <TextBlock x:Name="Status_textBlock" Margin="10,0,10,10" TextWrapping="Wrap" Foreground="White" Background="#FF646464" Height="76" VerticalAlignment="Bottom"/>
+                    <DataGrid x:Name="SQLite_dataGrid" Margin="10,185,10,91" IsReadOnly="True" AutoGenerateColumns="True"/>
+                    <Grid Margin="145,10,10,0" Height="170" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="Query_textBox" TextWrapping="Wrap" Background="#FF555555" Foreground="White" BorderBrush="#FF555555" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Padding="3" Text="SELECT name FROM sqlite_master WHERE type = 'table';" TabIndex="0" Margin="0,0,0,0"/>
+                        <TextBox x:Name="Query_textBox_C" Margin="4,0,0,0" TextWrapping="Wrap" Background="#FF555555" Foreground="White" BorderBrush="#FF555555" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Padding="3" Text="note pad here.." TabIndex="0" Grid.Column="1"/>
+                        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Height="170" VerticalAlignment="Bottom" Width="4" Background="#FFC8C8C8"/>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>

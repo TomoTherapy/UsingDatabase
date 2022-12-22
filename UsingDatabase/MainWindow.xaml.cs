@@ -71,59 +71,6 @@ namespace UsingDatabase
                 Status_textBlock.Text = lite.Status;
             }
         }
-
-        private void CreateTable_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!lite.Connection)
-            {
-                MessageBox.Show("DB 연결안됨");
-                return;
-            }
-
-            string sql = "CREATE TABLE EMPLOYEE( " + Environment.NewLine;
-            sql += "NUM INTEGER PRIMARY KEY AUTOINCREMENT " + Environment.NewLine;
-            sql += ", NAME VARCHAR(100)" + Environment.NewLine;
-            sql += ", ADDRESS VARCHAR(200)" + Environment.NewLine;
-            sql += ", DESCRIPTION VARCHAR(200)" + Environment.NewLine;
-            sql += ", DEPARTMENT VARCHAR(50)" + Environment.NewLine;
-            sql += ", SALARY INTEGER" + Environment.NewLine;
-            sql += ")" + Environment.NewLine;
-
-            try
-            {
-                SQLiteExecuteQuery(sql);
-            }
-            catch(Exception ex)
-            {
-                Status_textBlock.Text = ex.Message;
-            }
-        }
-
-        private void Insert_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!lite.Connection)
-            {
-                MessageBox.Show("DB 연결안됨");
-                return;
-            }
-
-            string sql = "INSERT INTO EMPLOYEE(NAME, ADDRESS, DESCRIPTION, DEPARTMENT,SALARY) VALUES (" + Environment.NewLine;
-            sql += "'" + Name_textBox.Text + "'" + Environment.NewLine;
-            sql += ",'" + Address_textBox.Text + "'" + Environment.NewLine;
-            sql += ",'" + Description_textBox.Text + "'" + Environment.NewLine;
-            sql += ",'" + Department_textBox.Text + "'" + Environment.NewLine;
-            sql += "," + Salary_textBox.Text + Environment.NewLine;
-            sql += ")" + Environment.NewLine;
-
-            try
-            {
-                SQLiteExecuteQuery(sql);
-            }
-            catch (Exception ex)
-            {
-                Status_textBlock.Text = ex.Message;
-            }
-        }
         #endregion
 
         #region MySQL
@@ -163,5 +110,9 @@ namespace UsingDatabase
         }
         #endregion
 
+        private void csv_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
